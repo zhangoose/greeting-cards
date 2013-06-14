@@ -10,6 +10,7 @@ var ytheo; // theoretical y
 var miss = 0;
 var hit = 0;
 var done = 0; // will be 1 when finished
+var start = 0; // will be 1 when you finally hit the first one :D 
 var scream = new Audio("scream.mp3");
 var welcome = new Audio("welcome.mp3");
 var clown = new Image();
@@ -41,16 +42,21 @@ function mouse(mevent){
 				//console.log("rawr");
 				//sound.play();
 				hit++;
+				start =1;
 				document.getElementById("hit").innerHTML = "HIT: " + hit;
 				
 			}
-			else{
+			else if(start == 1){
 				
 				ctx.drawImage(clown,0,0);
 				scream.play();
 				miss++;
 				document.getElementById("miss").innerHTML = "MISS: " + miss;
 				
+			}
+			else{
+				
+				console.log("didn't hit anything yet");
 			}
 		}
 	}/*end of everything*/
