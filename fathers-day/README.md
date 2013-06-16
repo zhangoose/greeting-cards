@@ -9,3 +9,5 @@ which would be something that says "HAPPY FATHER'S DAY."
 
 Anyways, didn't need the CSS stylesheet. Played with Javascript outside of 
 HTML5 Canvas, which was nice. Used jQuery for the mouse down & up events.
+
+Oh, and thank you CSS-TRICKS for the random hex color generator line of code. (http://css-tricks.com/examples/RandomHexColor/)
