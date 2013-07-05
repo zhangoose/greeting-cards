@@ -8,6 +8,8 @@ var x, y;
 var dx = 2;
 var sy = HEIGHT; //for the spec
 var count = 0;
+var speckArray = new Array(10); //for the actualBOOM
+var i;
 
 
 
@@ -39,9 +41,17 @@ function speck(x,y,color){
 	
 }//end of speck function
 
+function initArray(rad){
+	for(i = 0; i < 10; i++){
+		console.log("speck");
+		speckArray[i] = speck(x-10,y-10,color);
+	}//end of for
+
+}//end of initArray()
+
 function actualBOOM(){
-	console.log("BOOOOOOOOOOOOOOOOOMm");
-	
+	initArray();
+
 
 }//end of actualBOOM function
 
