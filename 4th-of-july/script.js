@@ -42,15 +42,30 @@ function speck(x,y,color){
 }//end of speck function
 
 function initArray(rad){
+	// initializes the array that holds all the specks
 	for(i = 0; i < 10; i++){
 		console.log("speck");
 		speckArray[i] = speck(x-10,y-10,color);
 	}//end of for
 
+
 }//end of initArray()
 
 function actualBOOM(){
-	initArray();
+//	initArray();
+	drawCircle(x-10,y-10,5,color);	
+	setTimeout( function(){
+		drawCircle(x-10,y-10,8,color);
+		setTimeout( function(){
+			drawCircle(x-10,y-10,11,color);
+			setTimeout( function(){
+				drawCircle(x-10,y-10,15,color);
+				setTimeout( function(){
+					drawCircle(x-10,y-10,19,color);
+				},100);
+			},100);
+		},100);
+	},100);
 
 
 }//end of actualBOOM function
@@ -95,7 +110,7 @@ function mouse(mevent){
 	x = mevent.pageX;
 	y = mevent.pageY;
 	console.log("x is " + x +  " y is " + y);
-	inter = setInterval(preBOOM,40);
+	inter = setInterval(preBOOM,20);
 	reInit();
 }//end of mouse mevent function
 
