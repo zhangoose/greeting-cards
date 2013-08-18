@@ -5,6 +5,7 @@ var sofar; // the innerHTML so far
 var bunniez = new Array(); //use .push() to add to this array of Bunny obj's
 
 //ffffff links spam 
+/*
 var blue = "http://25.media.tumblr.com/6a9efaa3e5b3011f6fec54d3f0461bf6/tumblr_mqf6wcdnVb1qg6u97o1_250.gif";
 var green = "http://24.media.tumblr.com/e69da932f902bea33e68e6fb065446d9/tumblr_mqf6wcdnVb1qg6u97o2_250.gif";
 var orange = "http://24.media.tumblr.com/d075c60ad29c8009d5d9949800338c25/tumblr_mqf6wcdnVb1qg6u97o3_250.gif";
@@ -12,8 +13,16 @@ var pink = "http://31.media.tumblr.com/302cd79b992516a9ea7a6f6872aeb380/tumblr_m
 var purple = "http://24.media.tumblr.com/3828667eeb9eaa2023513ed9e1f2f70b/tumblr_mqf6wcdnVb1qg6u97o5_250.gif";
 var yellow = "http://25.media.tumblr.com/a1cc547defee59361e5eaeee958b885a/tumblr_mqf6wcdnVb1qg6u97o6_250.gif";
 var poop = "http://24.media.tumblr.com/8ba6048812a4c9932bed1c7dbae956b6/tumblr_mqf6wcdnVb1qg6u97o7_r1_250.gif";
+*/
 //end of links spam
 
+var blue = "blue.gif";
+var green = "green.gif";
+var orange = "orange.gif";
+var pink = "pink.gif";
+var purple = "purple.gif";
+var yellow = "yellow.gif";
+var poop = "poop.gif";
 
 
 function randomBunniez(){
@@ -66,6 +75,8 @@ function makeBunniez(xCoord, yCoord, src){
 	else{
 		console.log("uh no");
 	}
+
+	console.log(printBunnyArray(bunniez));
 }//end of makeBunniez
 
 $(document).mousedown(mdown);

@@ -8,3 +8,15 @@ function Bunny(xCoord, yCoord, type){
 
 }//end of Bunny object initializer
 
+function printBunnyArray(bunnyArr){
+	var lengthArray=  bunnyArr.length;
+	var i;
+	var ret; //string your'e returning
+
+	for(i = 0; i < lengthArray; i++){
+		ret = ret + "xCoord:" + bunnyArr[i].xCoord	+ " yCoord:" + bunnyArr[i].yCoord + " type:" + bunnyArr[i].type + "\n";
+
+	}//end of for
+	return ret;
+}//end of printBunnyArray
+
