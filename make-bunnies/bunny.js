@@ -15,7 +15,9 @@ function printBunnyArray(bunnyArr){
 	var ret; //string your'e returning
 
 	for(i = 0; i < lengthArray; i++){
-		ret = ret + "xCoord:" + bunnyArr[i].xCoord	+ " yCoord:" + bunnyArr[i].yCoord + " type:" + bunnyArr[i].type + " className:" + bunnyArr[i].id + "\n";
+		if(bunnyArr[i] != null){
+			ret = ret + "xCoord:" + bunnyArr[i].xCoord	+ " yCoord:" + bunnyArr[i].yCoord + " type:" + bunnyArr[i].type + " className:" + bunnyArr[i].id + "\n";
+		}//end of if 
 
 	}//end of for
 	return ret;

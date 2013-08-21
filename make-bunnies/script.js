@@ -27,7 +27,9 @@ var poop = "images/poop.gif";
 
 function actualRemoval(bunnyTarget){
 	// the process of actually removing a bunny (from the page!!!)
-
+	var jQueryFormatID = "#" + bunnyTarget.id;
+	$(jQueryFormatID).css("display","none");
+	console.log("I removed " + jQueryFormatID);
 }//end of actualRemoval
 
 function destroyRadius(bunnyArray, thePoop){
@@ -39,13 +41,20 @@ function destroyRadius(bunnyArray, thePoop){
 	var i;
 	console.log("hi my name is poop and I'm at " + thePoop.xCoord + " hmu <3");
 	for(i = 0; i < bunnyArray.length; i++){
-		if(Math.abs(bunnyArray[i].xCoord - thePoop.xCoord) < 50
+		if(Math.abs(bunnyArray[i].xCoord - thePoop.xCoord) <= 100
 				&& bunnyArray[i].type != poop){
 
 			console.log("hey you're close, " + bunnyArray[i].id + " xcoord of " + bunnyArray[i].xCoord);
 
+			//css
+			actualRemoval(bunnyArray[i]);
+		
+			// splicing
+			bunnyArray.splice(i,1);	
+			
 		}//end of if need to remove 
 	}//end of for 
+	return bunnyArray;
 }//end of destroyRadius function
 
 function randomBunniez(){
@@ -94,13 +103,13 @@ function makeBunniez(xCoord, yCoord, src){
 	if(bunniez[counter].type == poop){
 		console.log("yay poopers");
 		//start looping thru & destroying bunnies
-		destroyRadius(bunniez,bunniez[counter]);	
+		bunniez = destroyRadius(bunniez,bunniez[counter]);	
 	}//end of if pooop
 	else{
 		console.log("uh no");
 	}
 
-	//console.log(printBunnyArray(bunniez));
+	console.log(printBunnyArray(bunniez));
 	counter++;
 }//end of makeBunniez
 
