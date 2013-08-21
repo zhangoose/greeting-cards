@@ -16,14 +16,17 @@ var poop = "http://24.media.tumblr.com/8ba6048812a4c9932bed1c7dbae956b6/tumblr_m
 */
 //end of links spam
 
-var blue = "blue.gif";
-var green = "green.gif";
-var orange = "orange.gif";
-var pink = "pink.gif";
-var purple = "purple.gif";
-var yellow = "yellow.gif";
-var poop = "poop.gif";
+var blue = "images/blue.gif";
+var green = "images/green.gif";
+var orange = "images/orange.gif";
+var pink = "images/pink.gif";
+var purple = "images/purple.gif";
+var yellow = "images/yellow.gif";
+var poop = "images/poop.gif";
 
+function destroyRadius(bunnyArray){
+
+}//end of destroyRadius function
 
 function randomBunniez(){
 	// returns a src!!! yay
@@ -71,6 +74,7 @@ function makeBunniez(xCoord, yCoord, src){
 	if(bunniez[counter-1].type == poop){
 		console.log("yay poopers");
 		//start looping thru & destroying bunnies
+		destroyRadius(bunniez);	
 	}//end of if pooop
 	else{
 		console.log("uh no");
