@@ -7,6 +7,6 @@ http://the-29.tumblr.com/bunnies
 
 ----update 8/21
 
-Separated the code into files
-Added more features to make somewhat more interesting
-Changes not updated on the tumblr site.
+*Separated the code into files
+*Added more features to make somewhat more interesting
+*Changes not updated on the tumblr site.
