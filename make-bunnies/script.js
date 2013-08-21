@@ -24,8 +24,28 @@ var purple = "images/purple.gif";
 var yellow = "images/yellow.gif";
 var poop = "images/poop.gif";
 
-function destroyRadius(bunnyArray){
 
+function actualRemoval(bunnyTarget){
+	// the process of actually removing a bunny (from the page!!!)
+
+}//end of actualRemoval
+
+function destroyRadius(bunnyArray, thePoop){
+	//linear searches through the bunny array 
+	//splices the elements that are in that radius of destruction
+	//ignores poop and non-radius bunnies
+	//calls actualRemoval
+		
+	var i;
+	console.log("hi my name is poop and I'm at " + thePoop.xCoord + " hmu <3");
+	for(i = 0; i < bunnyArray.length; i++){
+		if(Math.abs(bunnyArray[i].xCoord - thePoop.xCoord) < 50
+				&& bunnyArray[i].type != poop){
+
+			console.log("hey you're close, " + bunnyArray[i].id + " xcoord of " + bunnyArray[i].xCoord);
+
+		}//end of if need to remove 
+	}//end of for 
 }//end of destroyRadius function
 
 function randomBunniez(){
@@ -53,8 +73,8 @@ function mdown(mevent){
 }//end of mdown
 
 function makeBunniez(xCoord, yCoord, src){
-	xCoord = xCoord -50;
-	yCoord = yCoord -50;
+	xCoord = xCoord -50;//center
+	yCoord = yCoord -50;//center
 	sofar = document.getElementById('bg').innerHTML;
 	var tempRand = randomBunniez();
 	document.getElementById('bg').innerHTML = 
@@ -64,23 +84,24 @@ function makeBunniez(xCoord, yCoord, src){
 	bunbun.style.top=yCoord+"px";
 	bunbun.style.width="7%";
 	bunbun.style.height="auto";
-	counter++;
 
 	// populating the bunniez array
-	var tempBun = new Bunny(xCoord, yCoord, tempRand);	
+	var tempBun = new Bunny(xCoord, yCoord, tempRand, counter);	
 	bunniez.push(tempBun);
 
+
 	//check if it's a poop
-	if(bunniez[counter-1].type == poop){
+	if(bunniez[counter].type == poop){
 		console.log("yay poopers");
 		//start looping thru & destroying bunnies
-		destroyRadius(bunniez);	
+		destroyRadius(bunniez,bunniez[counter]);	
 	}//end of if pooop
 	else{
 		console.log("uh no");
 	}
 
-	console.log(printBunnyArray(bunniez));
+	//console.log(printBunnyArray(bunniez));
+	counter++;
 }//end of makeBunniez
 
 $(document).mousedown(mdown);
