@@ -3,6 +3,7 @@ var y;
 var counter = 0; // going to increment with every bunny
 var sofar; // the innerHTML so far
 var bunniez = new Array(); //use .push() to add to this array of Bunny obj's
+var killCount = 0;
 
 //ffffff links spam 
 /*
@@ -31,6 +32,9 @@ function actualRemoval(bunnyTarget){
 	//$(jQueryFormatID).style.display = "none";
 	$(jQueryFormatID).fadeOut("slow");
 	console.log("I removed " + jQueryFormatID);
+
+	//toggle killCount visibility
+	
 }//end of actualRemoval
 
 function destroyRadius(bunnyArray, thePoop){
@@ -47,6 +51,13 @@ function destroyRadius(bunnyArray, thePoop){
 				&& bunnyArray[i].isDead == false){
 
 			console.log("hey you're close, " + bunnyArray[i].id + " xcoord of " + bunnyArray[i].xCoord);
+
+			killCount++;
+			$("#count").show();
+			$("#count").text("KILLED: " + killCount);
+			setTimeout(function(){
+				$("#count").hide();
+			},1500);
 
 			//css
 			actualRemoval(bunnyArray[i]);
@@ -79,10 +90,10 @@ function randomBunniez(){
 }//end of randomBunniez()
 
 function mdown(mevent){
-	console.log("downnnn");
+	$("#intro").css("display","none");
+
 	x = mevent.pageX;
 	y = mevent.pageY;
-	console.log("x is " + x + " y is " + y);
 	
 	makeBunniez(x,y);
 }//end of mdown
