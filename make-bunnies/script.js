@@ -28,7 +28,8 @@ var poop = "images/poop.gif";
 function actualRemoval(bunnyTarget){
 	// the process of actually removing a bunny (from the page!!!)
 	var jQueryFormatID = "#" + bunnyTarget.id;
-	$(jQueryFormatID).css("display","none");
+	//$(jQueryFormatID).style.display = "none";
+	$(jQueryFormatID).fadeOut("slow");
 	console.log("I removed " + jQueryFormatID);
 }//end of actualRemoval
 
@@ -42,15 +43,20 @@ function destroyRadius(bunnyArray, thePoop){
 	console.log("hi my name is poop and I'm at " + thePoop.xCoord + " hmu <3");
 	for(i = 0; i < bunnyArray.length; i++){
 		if(Math.abs(bunnyArray[i].xCoord - thePoop.xCoord) <= 100
-				&& bunnyArray[i].type != poop){
+				&& bunnyArray[i].type != poop
+				&& bunnyArray[i].isDead == false){
 
 			console.log("hey you're close, " + bunnyArray[i].id + " xcoord of " + bunnyArray[i].xCoord);
 
 			//css
 			actualRemoval(bunnyArray[i]);
-		
+			bunnyArray[i].isDead = true;	
 			// splicing
+			/*
 			bunnyArray.splice(i,1);	
+			i--;
+			counter--;
+			*/
 			
 		}//end of if need to remove 
 	}//end of for 

@@ -5,7 +5,8 @@ function Bunny(xCoord, yCoord, type, id){
 	this.xCoord = xCoord; //center x
 	this.yCoord = yCoord; // center y
 	this.type = type; //type = color of bunny or poop, taken from the arrayBunniez from script.js
-	this.id = id;;
+	this.id = id;
+	this.isDead = false;
 
 }//end of Bunny object initializer
 
