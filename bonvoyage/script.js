@@ -72,6 +72,7 @@ function clearRect(){
 function airplane(){
 	plane.src = "plane.gif";
 	ctx.drawImage(plane,x-42,y-18);
+	console.log("airplane!");
 	
 }/*end of airplane function*/
 
